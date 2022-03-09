@@ -11,6 +11,7 @@ export class VoitKampfQuestionService {
   constructor() { }
 
   getVoitKampfQuestions(): VoitKampfQuestion[]{
+    //TODO: запросом получать ответы на вопросы на тест по заданному id(позже добавить в параметр метода)
     return [{
       question: "Сколько стоит твоя мать?", answer:"У тебя точно не хватит на неё денег", result:true
     },{
@@ -23,6 +24,6 @@ export class VoitKampfQuestionService {
   }
 
   addVoitKampfTest(){
-
+    //TODO: сделать прохождение теста
   }
 }

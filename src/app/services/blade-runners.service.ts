@@ -15,6 +15,7 @@ export class BladeRunnersService {
   }
 
   public getExistingBladeRunners() {
+    //TODO: запросом получить всех существующих бегущих по лезвию
     this.bladeRunners = [{
       id: 1, humanoid: {
         id: 1,
@@ -59,6 +60,7 @@ export class BladeRunnersService {
   }
 
   public getBladeRunnersTasks() {
+    //TODO: запросом получить все существующие задания по поиску реплекантов
     this.bladeRunners = [{
       id: 1, humanoid: {
         id: 1,

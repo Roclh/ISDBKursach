@@ -3,6 +3,7 @@ import {VoitKampfTestResult} from '../samples/voit-kampf-test-result';
 import {VoitKampfTestTablePopupComponent} from '../popups/voit-kampf-test-table-popup/voit-kampf-test-table-popup.component';
 import {MessageService} from 'primeng/api';
 import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
+import {VoitKampfTestService} from '../services/voit-kampf-test.service';
 
 @Component({
   selector: 'app-voit-kampf-test-table',
@@ -13,13 +14,14 @@ import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
 export class VoitKampfTestTableComponent implements OnInit {
 
   headerValue: string;
-  voitCampfTests: VoitKampfTestResult[];
+  voitKampfTests: VoitKampfTestResult[];
   selectedTest: VoitKampfTestResult;
   cols: any;
 
   constructor(public messageService: MessageService,
               public ref: DynamicDialogRef,
-              public dialogService: DialogService) { }
+              public dialogService: DialogService,
+              public voitKampfTestsService: VoitKampfTestService) { }
 
   ngOnInit(): void {
     this.headerValue = "Пройденные тесты Войта-Кампфа";
@@ -29,13 +31,7 @@ export class VoitKampfTestTableComponent implements OnInit {
       {field: 'eyeMovement', header: 'Движение глаз'},
       {field: 'result', header: 'Результат'}
     ];
-    this.voitCampfTests = [{
-      id: 1, brainReaction: true, eyeMovement: false, result: false, completionDate: '09.02.2022'
-    },{
-      id: 2, brainReaction: true, eyeMovement: true, result: true, completionDate: '07.02.2022'
-    },{
-      id: 3, brainReaction: false, eyeMovement: true, result: false, completionDate: '08.02.2022'
-    }];
+    this.voitKampfTests = this.voitKampfTestsService.getAllVoitKampfTests();
   }
 
   onRowSelect($event: any) {

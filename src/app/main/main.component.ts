@@ -64,7 +64,7 @@ export class MainComponent implements OnInit, AfterViewInit {
   }
 
   logout() {
-
+    //TODO: route to auth page
   }
 
   showMainTable(header: string): void {
