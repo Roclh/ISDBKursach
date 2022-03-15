@@ -4,6 +4,7 @@ import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
 import {MainTablePopupComponent} from '../popups/main-table-popup/main-table-popup.component';
 import {MessageService} from 'primeng/api';
 import {HumanoidService} from '../services/humanoid.service';
+import {HumanoidFormComponent} from '../forms/humanoid-form/humanoid-form.component';
 
 @Component({
   selector: 'app-main-table',
@@ -88,5 +89,16 @@ export class MainTableComponent implements OnInit {
         this.selectedCut=this.allHumanoids;
         break;
     }
+  }
+
+  createNewPerson() {
+    this.ref = this.dialogService.open(HumanoidFormComponent, {
+      header: "Добавить нового гуманойда",
+      width: '80%',
+      dismissableMask: true,
+      contentStyle: {"min-height": "1000px", "overflow": "auto"},
+      baseZIndex: 10000,
+      showHeader: true
+    });
   }
 }

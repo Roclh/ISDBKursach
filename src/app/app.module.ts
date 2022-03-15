@@ -38,6 +38,10 @@ import {TooltipModule} from 'primeng/tooltip';
 import { SelectReplicantPopupComponent } from './popups/select-replicant-popup/select-replicant-popup.component';
 import { SelectBladeRunnerPopupComponent } from './popups/select-blade-runner-popup/select-blade-runner-popup.component';
 import {ConfirmPopupModule} from 'primeng/confirmpopup';
+import { HumanoidFormComponent } from './forms/humanoid-form/humanoid-form.component';
+import {CalendarModule} from 'primeng/calendar';
+import {CheckboxModule} from 'primeng/checkbox';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -57,9 +61,13 @@ import {ConfirmPopupModule} from 'primeng/confirmpopup';
     ExistingBladeRunnersTasksComponent,
     NewBladeRunnerTaskComponent,
     SelectReplicantPopupComponent,
-    SelectBladeRunnerPopupComponent
+    SelectBladeRunnerPopupComponent,
+    HumanoidFormComponent
   ],
   imports: [
+    CalendarModule,
+    CheckboxModule,
+    DropdownModule,
     BrowserModule,
     PanelModule,
     AppRoutingModule,
